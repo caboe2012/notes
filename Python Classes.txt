@@ -1,0 +1,33 @@
+Using Classes in Python
+# More efficient way of creating Classes by using Inheritance
+class Musician(object):
+    def __init__(self, sounds):
+        self.sounds = sounds
+    
+    def solo(self, length):
+        for i in range(length):
+            print self.sounds[i % len(self.sounds)]
+
+class Bassist(Musician): # Musician is the Parent of Bassist Class
+    def __init__(self):
+        # Call the __init__ method of the parent class
+        super(Bassist, self).__init__(["Twang","Thrumb", "Bling"])
+
+class Guitarist(Musician):
+    def __init__(self):
+        # Call the __init__ method of the parent class
+        super(Guitarist, self).__init__(["Boink", "Bow", "Boom"])
+    
+    def tune(self):
+        print "Be there in jiffy"
+        print "Twoning, sproing, splang"
+
+
+Getting the class name of an instance in python!  Huzzah!
+type("instance").__name__
+
+Counting things using a dictionary
+d = []
+for key in some_list:
+d[key] = d.get(key,0) + 1
+
